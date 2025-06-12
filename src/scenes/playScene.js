@@ -159,7 +159,7 @@ class PlayScene extends BaseScene {
   }
 
   createPauseButton() {
-    if (this.isMobile) return; 
+    if (this.isMobile) return;
 
     this.isPaused = false;
     const pauseButton = this.add
@@ -183,8 +183,10 @@ class PlayScene extends BaseScene {
       (pointer) => {
         if (pointer.pointerType === "touch") {
           console.log("📱 Tocó la pantalla (móvil)");
+          this.flap();
         } else {
-          console.log("🖱 Mouse (PC)");
+          console.log("🖱 Mouse (PC) change");
+          this.flap();
         }
         this.flap();
       },
